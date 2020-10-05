@@ -15,7 +15,7 @@ The grammatical rules in this document are to be interpreted as described in [RF
 ## 2.	Document Structure
 A JSON-identify document is a JSON [RFC7159](https://tools.ietf.org/html/rfc7159) document that represents an object by itself.
 
-### 2.1.    Idenitifiers
+### 2.1.    Identifiers
 The object MUST contain at least one of three possible identifiers. The object MAY include all possible identifiers, which allows for the location of the object in multiple ways. Additional properties of the document MAY be added in optional defined data objects. The identifiers and the data objects defined in this document all start with an underscore "_" to easily recognize these.
 
 The following is an example of a JSON-identify document containing all three possible identifiers:
@@ -87,8 +87,8 @@ A few optional data objects are defined
 
 |   Identifier  |   Type                |   Purpose                                                             			|
 |   ----------  |   ----                |   -------                                                             			|
-|   _data       |   object *or* array   |   Object or array of objects containing the properties of that specific object	|
-|   _metadata   |   object   			|   Object containing metadata of the object                               			|
+|   _data       |   object *or* array   |   Object or array of objects containing the properties of that specific object		|
+|   _metadata   |   object   		|   Object containing metadata of the object                               			|
 
 The `_data` data object is defined additionally to distinguish between the identifiers and the actual data. When coding for JSON-identify, access to these properties can be easily translated to simplify the access. For example, using JavaScript, the property `firstname` in the previous example, COULD be accessed either through `person._data['firstname']` or `person['firstname']`. In the latter form, the properties would be loaded at a higher level.
 
